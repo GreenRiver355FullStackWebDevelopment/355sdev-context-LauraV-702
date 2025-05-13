@@ -8,8 +8,10 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 function App() {
+  //store the list of restaurants
   const [restaurantState, setRestaurants] = useState([]);
 
+  //fetch resaurnat data
   useEffect(() => {
     async function fetchRestaurants() {
       try {
@@ -24,11 +26,13 @@ function App() {
     fetchRestaurants();
   }, []);
 
+  //update restaurant list adding a new one
   const updateRestaurants = (restaurant) => {
     setRestaurants([...restaurantState, restaurant]);
   };
 
   return (
+    //Provide the resaurant data and updater function
     <RestaurantContext.Provider
       value={{ 
         restaurants: 
@@ -36,7 +40,10 @@ function App() {
         updateRestaurants }}
     >
       <div className="App">
+        {/* Component to add new restaurants */}
         <AddRestaurant />
+
+        {/* Component to display all restaurants */}
         <RestaurantsContainer />
       </div>
     </RestaurantContext.Provider>
