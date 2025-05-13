@@ -1,6 +1,9 @@
 import Main from "./components/Main";
 import { RestaurantContext } from "./context/RestaurantContext";
-import { RestaurantsContainer } from "./components/RestaurantsContainer";
+
+import AddRestaurant from "./components/AddRestaurant";
+import RestaurantsContainer from "./components/RestaurantsContainer"
+;
 import { useEffect, useState } from "react";
 import "./App.css";
 
